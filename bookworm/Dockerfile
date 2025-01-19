@@ -1,14 +1,14 @@
 ############################################################
 # Dockerfile that contains SteamCMD
 ############################################################
-FROM debian:bookworm-slim as build_stage
+FROM debian:bookworm-slim AS build_stage
 
 LABEL maintainer="walentinlamonos@gmail.com"
 ARG PUID=1000
 
-ENV USER steam
-ENV HOMEDIR "/home/${USER}"
-ENV STEAMCMDDIR "${HOMEDIR}/steamcmd"
+ENV USER=steam
+ENV HOMEDIR="/home/${USER}"
+ENV STEAMCMDDIR="${HOMEDIR}/steamcmd"
 
 RUN set -x \
 	# Install, update & upgrade packages
